@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "sessionId": "619d4e38-d16a-470b-9ea4-dbd6efd4d4fa",
+  "agentId": "kiro-cli",
+  "messages": [
+    {
+      "id": "96d65ff2-dde2-4e64-b10e-5028f37653d4",
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "helo kiro"
+        }
+      ],
+      "timestamp": "2026-06-09T09:33:21.978Z"
+    },
+    {
+      "id": "929e0a4d-5850-45f3-be5d-2feabfab1fc9",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Hey! I'm Kiro, an AI agent running in your terminal. I can help with coding, file operations, system tasks, AWS management, and more. What can I do for you?"
+        }
+      ],
+      "timestamp": "2026-06-09T09:33:26.075Z"
+    }
+  ],
+  "savedAt": "2026-06-09T09:33:26.978Z"
+}

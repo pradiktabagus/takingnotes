@@ -1,0 +1,87 @@
+{
+  "claude": {
+    "id": "claude-code-acp",
+    "displayName": "Claude Code",
+    "apiKey": "",
+    "command": "claude-agent-acp",
+    "args": [],
+    "env": []
+  },
+  "codex": {
+    "id": "codex-acp",
+    "displayName": "Codex",
+    "apiKey": "",
+    "command": "codex-acp",
+    "args": [],
+    "env": []
+  },
+  "gemini": {
+    "id": "gemini-cli",
+    "displayName": "Gemini CLI",
+    "apiKey": "",
+    "command": "gemini",
+    "args": [
+      "--experimental-acp"
+    ],
+    "env": []
+  },
+  "customAgents": [
+    {
+      "id": "kiro-cli",
+      "displayName": "Kiro",
+      "command": "/home/juni/.local/bin/kiro-cli",
+      "args": [
+        "acp"
+      ],
+      "env": []
+    }
+  ],
+  "defaultAgentId": "kiro-cli",
+  "autoAllowPermissions": false,
+  "autoMentionActiveNote": true,
+  "enableSystemNotifications": true,
+  "debugMode": false,
+  "nodePath": "/run/user/1000/fnm_multishells/51696_1780996580221/bin/node",
+  "exportSettings": {
+    "defaultFolder": "Agent Client",
+    "filenameTemplate": "agent_client_{date}_{time}",
+    "autoExportOnNewChat": false,
+    "autoExportOnCloseChat": false,
+    "openFileAfterExport": true,
+    "includeImages": true,
+    "imageLocation": "obsidian",
+    "imageCustomFolder": "Agent Client",
+    "frontmatterTag": "agent-client"
+  },
+  "windowsWslMode": false,
+  "sendMessageShortcut": "enter",
+  "chatViewLocation": "right-tab",
+  "displaySettings": {
+    "autoCollapseDiffs": false,
+    "diffCollapseThreshold": 10,
+    "maxNoteLength": 10000,
+    "maxSelectionLength": 10000,
+    "showEmojis": true,
+    "fontSize": null
+  },
+  "savedSessions": [
+    {
+      "sessionId": "619d4e38-d16a-470b-9ea4-dbd6efd4d4fa",
+      "agentId": "kiro-cli",
+      "cwd": "/home/juni/Dokumen/Obsidian Vault",
+      "title": "helo kiro",
+      "createdAt": "2026-06-09T09:33:26.971Z",
+      "updatedAt": "2026-06-09T09:33:26.971Z"
+    }
+  ],
+  "lastUsedModels": {},
+  "lastUsedModes": {},
+  "enableFloatingChat": false,
+  "floatingButtonImage": "",
+  "floatingWindowSize": {
+    "width": 400,
+    "height": 500
+  },
+  "floatingWindowPosition": null,
+  "floatingButtonPosition": null
+}
