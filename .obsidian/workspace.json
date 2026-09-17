@@ -25,12 +25,14 @@
             "id": "889bc6d5995efa9e",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.13.7"
+                "file": "03_Project/Untitled.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.13.7"
+              "icon": "lucide-file",
+              "title": "Untitled"
             }
           }
         ],
@@ -195,11 +197,11 @@
               "type": "agent-client-chat-view",
               "state": {},
               "icon": "bot-message-square",
-              "title": "New session"
+              "title": "helo kiro"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -221,15 +223,22 @@
   },
   "active": "889bc6d5995efa9e",
   "lastOpenFiles": [
-    "README.md",
+    "00_Inbox/04-current-state-gaps.md",
+    "03_Project/Untitled.md",
+    "00_Inbox/03-migration-and-validation.md",
+    "00_Inbox/02-technical-design.md",
+    "00_Inbox/01-architecture-decisions.md",
+    "00_Inbox/Readme.md",
+    "Untitled.md",
     "00_Inbox/(SPIKE) Semantic HTML.md",
-    "99_System/Assets",
-    "99_System.md",
     "99_System/Templates/Template - Project.md.md",
     "99_System/Templates/Template - Knowledge Wiki.md.md",
-    "02_Wiki/Knowledge",
     "99_System/Templates/Template - Engineering Wiki.md.md",
     "99_System/Templates/Template - Daily Note.md.md",
+    "README.md",
+    "99_System/Assets",
+    "99_System.md",
+    "02_Wiki/Knowledge",
     "01_Inbox/2026-08-04.md",
     "01_Inbox/dd.md",
     "00_Inbox",
@@ -250,14 +259,7 @@
     "02_Wiki/Health-Fitness/202305021714_analisis-komposisi-tubuh-rofi.md",
     "02_Wiki/Health-Fitness/2023-runderful-21k-pakuwon-city.md",
     "Untitled 2.canvas",
-    "2026-06-09.md",
-    "analisis-komposisi-tubuh-02-mei-2026.md",
-    "02_Areas/Health-Fitness/lari-di-citraland.md",
-    "02_Areas/Health-Fitness/analisis-komposisi-tubuh-02-mei-2026.md",
-    "Welcome.md",
     "00_System/Memory/conversation_history.json",
-    "03_Resources/Literature/sirkus-pohon-andrea-hirata.md",
-    "03_Resources/Literature/kutipan-laut-bercerita.md",
     "02_Wiki/Engineering"
   ]
 }
