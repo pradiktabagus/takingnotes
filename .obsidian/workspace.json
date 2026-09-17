@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "(SPIKE) Semantic HTML"
             }
+          },
+          {
+            "id": "889bc6d5995efa9e",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.13.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.13.7"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -206,7 +219,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b40b01e7b2e444c9",
+  "active": "889bc6d5995efa9e",
   "lastOpenFiles": [
     "README.md",
     "00_Inbox/(SPIKE) Semantic HTML.md",
