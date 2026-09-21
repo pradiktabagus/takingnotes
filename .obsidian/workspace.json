@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_Wiki/Engineering/skills/context-engineering.md",
+                "file": "02_Wiki/Engineering/skills/test-driven-development.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "context-engineering"
+              "title": "test-driven-development"
             }
           }
         ]
@@ -208,18 +208,18 @@
   },
   "active": "b40b01e7b2e444c9",
   "lastOpenFiles": [
+    "02_Wiki/Engineering/skills/code-simplification.md",
+    "02_Wiki/Engineering/skills/code-review-and-quality.md",
+    "02_Wiki/Engineering/skills/git-workflow-and-versioning.md",
+    "02_Wiki/Engineering/skills/doubt-driven-development.md",
+    "02_Wiki/Engineering/skills/debugging-and-error-recovery.md",
+    "02_Wiki/Engineering/skills/context-engineering.md",
     "02_Wiki/Engineering/skills/performance-optimization.md",
     "02_Wiki/Engineering/skills/test-driven-development.md",
     "02_Wiki/Engineering/skills/source-driven-development.md",
     "02_Wiki/Engineering/skills/security-and-hardening.md",
     "02_Wiki/Engineering/skills/interview-me.md",
-    "02_Wiki/Engineering/skills/context-engineering.md",
-    "02_Wiki/Engineering/skills/code-simplification.md",
-    "02_Wiki/Engineering/skills/code-review-and-quality.md",
     "02_Wiki/Engineering/skills/incremental-implementation.md",
-    "02_Wiki/Engineering/skills/git-workflow-and-versioning.md",
-    "02_Wiki/Engineering/skills/doubt-driven-development.md",
-    "02_Wiki/Engineering/skills/debugging-and-error-recovery.md",
     "00_Inbox/(SPIKE) Semantic HTML.md",
     "02_Wiki/Engineering/skills",
     "03_Project/Untitled.md",
