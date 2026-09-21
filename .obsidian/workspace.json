@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Inbox/(SPIKE) Semantic HTML.md",
+                "file": "02_Wiki/Engineering/skills/context-engineering.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "(SPIKE) Semantic HTML"
-            }
-          },
-          {
-            "id": "889bc6d5995efa9e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_Project/Untitled.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "context-engineering"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -221,16 +206,29 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "889bc6d5995efa9e",
+  "active": "b40b01e7b2e444c9",
   "lastOpenFiles": [
-    "00_Inbox/04-current-state-gaps.md",
+    "02_Wiki/Engineering/skills/performance-optimization.md",
+    "02_Wiki/Engineering/skills/test-driven-development.md",
+    "02_Wiki/Engineering/skills/source-driven-development.md",
+    "02_Wiki/Engineering/skills/security-and-hardening.md",
+    "02_Wiki/Engineering/skills/interview-me.md",
+    "02_Wiki/Engineering/skills/context-engineering.md",
+    "02_Wiki/Engineering/skills/code-simplification.md",
+    "02_Wiki/Engineering/skills/code-review-and-quality.md",
+    "02_Wiki/Engineering/skills/incremental-implementation.md",
+    "02_Wiki/Engineering/skills/git-workflow-and-versioning.md",
+    "02_Wiki/Engineering/skills/doubt-driven-development.md",
+    "02_Wiki/Engineering/skills/debugging-and-error-recovery.md",
+    "00_Inbox/(SPIKE) Semantic HTML.md",
+    "02_Wiki/Engineering/skills",
     "03_Project/Untitled.md",
+    "00_Inbox/04-current-state-gaps.md",
     "00_Inbox/03-migration-and-validation.md",
     "00_Inbox/02-technical-design.md",
     "00_Inbox/01-architecture-decisions.md",
     "00_Inbox/Readme.md",
     "Untitled.md",
-    "00_Inbox/(SPIKE) Semantic HTML.md",
     "99_System/Templates/Template - Project.md.md",
     "99_System/Templates/Template - Knowledge Wiki.md.md",
     "99_System/Templates/Template - Engineering Wiki.md.md",
@@ -239,25 +237,13 @@
     "99_System/Assets",
     "99_System.md",
     "02_Wiki/Knowledge",
-    "01_Inbox/2026-08-04.md",
-    "01_Inbox/dd.md",
     "00_Inbox",
-    "pages/contents.md",
     "99_System/Templates",
-    "2026-08-04.md",
     "Untitled 1.base",
     "Untitled 2.base",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Untitled.base",
-    "02_Wiki/Engineering/analisa-caching-idntimes-detik.md",
-    "02_Wiki/Engineering/clean-architecture-dan-feature-sliced-design.md",
-    "02_Wiki/Knowledge/how-to-win-friends-part1.md",
-    "02_Wiki/Engineering/refactoring-sebagai-meditasi-infj.md",
-    "02_Wiki/Health-Fitness/Latihan-Leg-Day.md",
-    "02_Wiki/Health-Fitness/lari-10km-58-menit.md",
-    "02_Wiki/Health-Fitness/202305021714_analisis-komposisi-tubuh-rofi.md",
-    "02_Wiki/Health-Fitness/2023-runderful-21k-pakuwon-city.md",
     "Untitled 2.canvas",
     "00_System/Memory/conversation_history.json",
     "02_Wiki/Engineering"
