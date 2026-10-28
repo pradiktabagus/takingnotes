@@ -4,20 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "10906c2f431a7cd8",
+        "id": "023be590b2777498",
         "type": "tabs",
         "children": [
           {
-            "id": "b40b01e7b2e444c9",
+            "id": "e9073f8154d9119f",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.14.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.14.4"
+            }
+          },
+          {
+            "id": "b43c86170d2100ef",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.14.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.14.5"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -204,6 +219,7 @@
   },
   "active": "391748deca760ffd",
   "lastOpenFiles": [
+    "README.md",
     "02_Wiki/Engineering/skills/test-driven-development.md",
     "02_Wiki/Engineering/skills/code-simplification.md",
     "02_Wiki/Engineering/skills/code-review-and-quality.md",
@@ -229,7 +245,6 @@
     "99_System/Templates/Template - Knowledge Wiki.md.md",
     "99_System/Templates/Template - Engineering Wiki.md.md",
     "99_System/Templates/Template - Daily Note.md.md",
-    "README.md",
     "99_System/Assets",
     "99_System.md",
     "02_Wiki/Knowledge",
