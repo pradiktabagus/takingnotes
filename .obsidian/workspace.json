@@ -23,12 +23,14 @@
             "id": "b43c86170d2100ef",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.14.5"
+                "file": "02_Wiki/Engineering/skills/SKILLS.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.14.5"
+              "icon": "lucide-file",
+              "title": "SKILLS"
             }
           }
         ],
@@ -217,8 +219,9 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "391748deca760ffd",
+  "active": "b43c86170d2100ef",
   "lastOpenFiles": [
+    "02_Wiki/Engineering/skills/antislop/SKILL.md",
     "README.md",
     "02_Wiki/Engineering/skills/test-driven-development.md",
     "02_Wiki/Engineering/skills/code-simplification.md",
@@ -246,7 +249,6 @@
     "99_System/Templates/Template - Engineering Wiki.md.md",
     "99_System/Templates/Template - Daily Note.md.md",
     "99_System/Assets",
-    "99_System.md",
     "02_Wiki/Knowledge",
     "00_Inbox",
     "99_System/Templates",

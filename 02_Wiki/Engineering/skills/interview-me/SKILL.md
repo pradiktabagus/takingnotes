@@ -40,6 +40,14 @@ This skill needs a live, responsive user. **Do not invoke in non-interactive con
 
 ## The Process
 
+### Step 0: Look before you ask
+
+In an existing project, or when the user pointed at context (a spec, a handoff, files, earlier conversation), read it first, plus the code or material it connects to. Keep reading until you can say how the relevant parts work today and what the change would touch.
+
+- **Never ask what the project or the context already answers.** A question the repo could have answered spends the user's attention on your homework.
+- If you find something they may not have considered (a constraint, a conflict with existing code, a cheaper path), say it plainly in your first message. It may change the ask.
+- **Fast exit:** if after looking everything that matters is in the request, this skill is done. Do the work and say what you did.
+
 ### Step 1: Hypothesize, with a confidence number
 
 Before asking anything, write down your current best read of what the user wants in **one sentence**, plus an honest confidence number (0–100%):
@@ -78,6 +86,12 @@ Wait for the user to react before asking the next question.
 - It surfaces *your* assumptions, which is what the interview is meant to expose
 
 The risk here is a polite user agreeing with your guess to be agreeable. Mitigate by being visibly willing to be wrong, and occasionally guess in a direction you expect the user to push back on.
+
+**Light opt-out on the first question.** If the user invoked the skill or asked to brainstorm, just ask. If the skill fired on its own, add one line after your first question: "Or if you'd rather I just start, say so." If they take it, the interview is over: state any significant choice you're making (platform, language, library) in one plain line, then do the work.
+
+**Ask about how it gets made, early.** Find out which technical choices (stack, libraries, hosting, data store) the user wants to make, which they're handing to you, and what they already have. Someone with strong views wants to discuss them; someone counting on you needs sensible defaults said out loud. In existing work, build on what it already uses. A default you picked is logged as your call, never as something they agreed to.
+
+**Offer recon when it would help.** Once you have some grounding, offer to look deeper (the codebase, their files or data, the web) and say what you'd look for. The user decides whether you go.
 
 ### Step 3: Listen for "want vs. should want"
 
@@ -123,6 +137,28 @@ The gate is an explicit "yes." The following are **not** yes:
 - Silence followed by "okay let's start." → The user has given up on the interview, not converged. Stop and ask whether you've missed something.
 
 If they correct you, fold the correction in and restate. Loop until you get an explicit yes.
+
+### Step 6: Lay out the approaches
+
+The confirmed restate settles *what*. Before anything is built, settle *how*, in a message of its own:
+
+1. Come up with several real ways to build it. Drop the weak ones, including any that work against the confirmed Outcome or that the existing code rules out.
+2. Present the two or three that remain, each grounded in what the project actually does, with what it trades off.
+3. Recommend one and say why, then ask which way they want to go. If there is genuinely one sensible way, say so and say why the others don't fit.
+
+```
+Approaches:
+A. <name>: <how, in one line>. Trade-off: <cost or risk>.
+B. <name>: <how>. Trade-off: <...>.
+Recommend: A, because <reason tied to the confirmed Outcome or Constraint>.
+Which way?
+```
+
+Log the pick in DECIDED. Skip this step in Exploration Mode, or when the work is a small change with one obvious way to do it.
+
+**Size the work.** Once they've picked, say how big it is in plain words: a small change, or a project. The user can override. If it is really several independent pieces, say so, agree on an order, and take them one at a time. If it grows mid-task, stop and say so.
+
+**Offer a spike when it's cheaper than talking.** A quick throwaway build is often the fastest way to learn what the user wants or whether something works. Offer one when it would help. A spike gets minimal or no tests and stays labeled throwaway. Bring what it taught you back into the conversation; keeping and building on the spike is a new request, not a continuation.
 
 ### The 95% Confidence Stop
 
@@ -187,7 +223,7 @@ Same rule applies: confirm with an explicit yes.
 
 ## Output
 
-The output of this skill is a **confirmed statement of intent**: the restate from Step 4, with an explicit yes from Step 5. That's the deliverable. Specs, plans, and task lists are downstream; they consume the intent this skill produces.
+The output of this skill is a **confirmed statement of intent**: the restate from Step 4, with an explicit yes from Step 5, plus the approach the user picked in Step 6 when building follows. That's the deliverable. Specs, plans, and task lists are downstream; they consume the intent this skill produces.
 
 If the user wants the intent to persist (a multi-session project, a handoff to another collaborator), offer to save it to `docs/intent/[topic].md`. Only save if they confirm.
 
@@ -236,6 +272,7 @@ Two questions in, the agent has discovered the actual ask isn't "a dashboard." I
 - **`doubt-driven-development`**: downstream. Interview-me is pre-decision intent extraction; doubt-driven is post-decision review. After the user confirms a significant decision, offer to stress-test it.
 - **`context-engineering`**: pairs well. In a long session, the Decision Log doubles as the summary to carry into a fresh session.
 - **`source-driven-development`**: orthogonal. Interview-me clarifies what the user wants; SDD verifies framework facts.
+- **`incremental-implementation`**: downstream. Hand it the confirmed intent, the picked approach, and the size from Step 6; a project-sized piece becomes its slices.
 - If spec, planning, or idea-refinement skills are installed, hand the confirmed intent to them. If not, write the next step directly from the restate.
 
 ## Common Rationalizations
@@ -246,7 +283,9 @@ Two questions in, the agent has discovered the actual ask isn't "a dashboard." I
 | "Asking too many questions wastes their time" | Time wasted by 4–6 targeted questions is small. Time wasted by building the wrong thing is enormous, and the user is the one bearing that cost. |
 | "I'll figure it out as I build" | Switching costs after code exists are 10x what they are now. Discovery during implementation is rework. |
 | "They said 'whatever you think,' so I should just decide" | "Whatever you think" is delegation, not decision. Re-ask with two concrete options as a choice. |
-| "I should give them several options to pick from" | Options work when the user knows what they want and is choosing between trade-offs. They don't know what they want yet. Listing options widens the search; asking narrows it. |
+| "I should give them several options to pick from" | Options work when the user knows what they want and is choosing between trade-offs. They don't know what they want yet. Listing options widens the search; asking narrows it. Options belong in Step 6, for *how*, after the intent is confirmed. |
+| "I'll ask, it's faster than reading the code" | It's faster for you and slower for them. Run Step 0; ask only what the project can't answer. |
+| "I'll pick sensible defaults quietly" | Say them out loud. A default the user never heard is one they couldn't reject. |
 | "If I attach my guess, I'm leading them" | Leading is the point. Reacting is faster than generating from scratch. The risk is sycophancy, not leading; mitigate by being visibly willing to be wrong. |
 | "We've talked enough, I get it" | Test it: can you predict their reaction to the next three questions? If not, you don't get it yet. |
 | "The user said yes, we're done" | If the yes followed a vague restate or an open-ended "sounds good," the yes is hollow. Restate concretely and re-confirm. |
@@ -267,6 +306,10 @@ Two questions in, the agent has discovered the actual ask isn't "a dashboard." I
 - Following a tangent without parking it, or dropping it without saying so
 - Going past 5 questions on one topic with no log or checkpoint
 - Reopening a DECIDED item without logging the reversal
+- Asking something the codebase or the user's own context already answers
+- Starting to build after the restate without laying out approaches (unless it's a small change with one obvious way)
+- Treating "sounds good" to an idea as approval of a design or approach you haven't shown
+- Continuing to build on a spike as if it were the real thing
 
 ## Verification
 
@@ -284,3 +327,6 @@ After applying interview-me:
 - [ ] Any loop signal (repeat, double reversal, vaguer answers) triggered a forced two-option choice instead of more questions
 - [ ] No topic exceeded 8 questions without an explicit user choice to continue
 - [ ] Any handoff to a downstream skill was framed in terms of the confirmed intent, not the original underspecified ask
+- [ ] Relevant code or context was read before the first question; no question asked what the project already answers
+- [ ] Before building, two or three approaches with trade-offs and a recommendation were shown, and the user picked one (or there was one obvious way and you said why)
+- [ ] Defaults the agent chose were stated out loud and logged as the agent's call

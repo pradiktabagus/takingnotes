@@ -11,7 +11,7 @@ Review a change across five axes: correctness, readability, architecture, securi
 
 ## Review is read-only by default
 
-Report findings; do not edit files, commit, or push unless the user asks you to fix. Write the review in the user's language (Indonesian or English); keep code identifiers as written.
+Report findings; do not edit files, commit, or push unless the user asks you to fix. Read-only includes git state: do not check out, switch branches, reset, or stash on the user's checkout. To run or inspect another revision, use `git show`/`git diff`, or a separate worktree (`git worktree add /tmp/review-<sha> <sha>`, removed afterwards). Write the review in the user's language (Indonesian or English); keep code identifiers as written.
 
 ## Step 0: Get the change
 
@@ -27,6 +27,8 @@ Pick the source from what the user said:
 
 If the base branch is unclear, check `git branch -a` or ask. Then read the surrounding code of each changed file, not just the diff lines.
 
+**Reviewing your own work from this session?** You share the author's blind spots. When a subagent tool is available and the change is non-trivial, hand the review to a fresh-context reviewer with only the diff range, the requirements, and this skill, never the session history. See `doubt-driven-development` for the pattern.
+
 ## Process
 
 1. **Context**: what is this change for, what behavior should change, which spec/task/issue? If unclear, ask or state your assumption.
@@ -39,6 +41,7 @@ If the base branch is unclear, check `git branch -a` or ask. Then read the surro
 
 ### 1. Correctness
 - Matches the spec or task? Edge cases (null, empty, boundaries)? Error paths, not just the happy path?
+- A spec does not list every input or condition. Where it is silent, judge by what a reasonable user of this software would expect; silence is not permission. Grade such findings by their effect on that user.
 - Off-by-one, races, state inconsistency, stale closures, missing `await`?
 - Do the tests test the right thing?
 
@@ -110,11 +113,16 @@ Scope: <what was reviewed, how obtained>. Verified: <tests/build run, or "read o
 ### Optional / Nit / FYI
 - <file:line>: ...
 
+### Set aside
+- <behavior considered but not judged>: <reason, e.g. outside the task, needs product decision> (or "none")
+
 ### Verdict
 Approve | Approve with comments | Request changes: <one-line reason>
 ```
 
 Reference locations as `path/to/file:line`. If nothing is wrong, say what you checked rather than a bare "LGTM".
+
+**Set aside** lists every behavior you noticed and chose not to judge, with the reason, so nothing is dropped silently. The user decides whether each one matters.
 
 ## Change sizing
 
@@ -164,6 +172,9 @@ Supply-chain risk triage belongs to `security-and-hardening`.
 - A refactor that moves code without reducing concepts; new conditionals scattered into unrelated paths
 - Bulk dependency bumps with no changelog review; hand-edited lockfiles
 - You edited files during a review nobody asked you to fix
+- Checking out or resetting the user's branch to look at another revision
+- Dismissing a real problem because "the spec doesn't mention it"
+- Concerns you noticed but left out of the review with no mention
 
 ## Verification
 
@@ -171,5 +182,6 @@ Supply-chain risk triage belongs to `security-and-hardening`.
 - [ ] Each finding has a location, severity label, reason, and a suggested fix
 - [ ] Critical and Required items are clearly separated from Optional, Nit, and FYI
 - [ ] You stated what was run (tests, build) versus only read
+- [ ] Behaviors considered but not judged are listed under Set aside (or "none")
 - [ ] A verdict was given
-- [ ] No files were modified unless the user asked
+- [ ] No files and no git state (HEAD, branch, index, stash) were modified unless the user asked

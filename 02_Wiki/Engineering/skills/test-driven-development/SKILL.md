@@ -31,6 +31,8 @@ REFACTOR improve names, remove duplication; tests stay green
 
 A test that passes on the first run proves nothing: make sure you saw it fail, and that it failed because the behavior is missing, not because of a typo.
 
+Before writing the test body, **name the break**: which realistic change to production code would make this test fail? If you cannot name one, or the only thing that fails it is an intentional decision (a renamed constant, reworded message), the test is not catching a bug.
+
 ### Prove-It pattern for bugs
 
 ```
@@ -104,6 +106,26 @@ Decision guide: pure logic means unit; crosses a boundary (HTTP, DB, rules, file
 - **Name tests as specifications**: `rejects empty title`, not `works` or `test 3`.
 - **Deterministic**: no real time, randomness, network, or shared state between tests; each test sets up and cleans up its own data.
 - **Beyonce rule**: if you liked it, put a test on it. Tests, not infrastructure changes, are responsible for catching your regressions.
+- **Derive expectations independently.** Use literals and hand-checked fixtures (table-driven tests with literal `want` values are ideal). An expected value computed by the code under test or its helpers passes no matter what the code does:
+  ```ts
+  expect(buildQuery({ tag: 'urgent' })).toBe(buildQuery({ tag: 'urgent' })) // always true
+  expect(buildQuery({ tag: 'urgent' })).toBe('tag:"urgent"')                // catches bugs
+  ```
+- **No change detectors.** Do not assert a constant's value or exact private structure; assert the behavior that depends on it. Not `MAX_RETRIES == 5`, but "a failing call is retried 5 times and the 6th attempt never happens".
+- **Mocks earn no assertions on themselves.** Asserting that a mock returned what you told it to tests the mock. Before mocking a dependency, know its side effects; mock below the side effect the test relies on, and make fake data match the real shape completely.
+- **No test-only methods in production code.** Cleanup and inspection helpers belong in test utilities.
+
+## Mutation check
+
+Before finishing, mentally mutate the production code. For each realistic mutation, at least one test should fail:
+
+- wrong constant or argument
+- wrong branch taken
+- missing state change or side effect (write, event, call)
+- empty or default return
+- missing validation for zero, empty, nil, unauthorized, or malformed input
+
+A mutation no test catches means the behavior is unprotected or a test is tautological. Add or fix a test, or say which behavior is left uncovered.
 
 ## Anti-patterns
 
@@ -117,6 +139,8 @@ Decision guide: pure logic means unit; crosses a boundary (HTTP, DB, rules, file
 | Mocking everything | Real or fake at the boundary |
 | Tests that need production services | Emulators, local stacks, containers |
 | Deleting or skipping a test to go green | Fix the code or the test, and say why |
+| Expected value computed by the code under test | Hand-written literals |
+| Asserting on mock behavior | Assert on the real outcome |
 
 ## Common rationalizations
 
@@ -138,6 +162,8 @@ Decision guide: pure logic means unit; crosses a boundary (HTTP, DB, rules, file
 - Tests hitting real Firebase, Supabase, or AWS resources
 - Skipped or disabled tests to make the suite pass
 - Flaky tests tolerated or retried instead of fixed
+- A test whose break you cannot name
+- Reporting "all green" while a failure you did not cause scrolled past unmentioned
 
 ## Verification
 
@@ -147,5 +173,7 @@ Decision guide: pure logic means unit; crosses a boundary (HTTP, DB, rules, file
 - [ ] No test skipped or disabled; no test depends on production services
 - [ ] Test names describe behavior
 - [ ] Coverage did not drop (if tracked)
+- [ ] The mutation check found no realistic mutation that every test misses (or the gap is stated)
+- [ ] Every failure in the full-suite run is reported by name, including ones you did not cause
 
 Run each test command after a change that could affect the result; do not repeat it on unchanged code.
