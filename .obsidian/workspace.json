@@ -20,7 +20,7 @@
             }
           },
           {
-            "id": "b43c86170d2100ef",
+            "id": "07bef6360573b35c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -31,6 +31,18 @@
               },
               "icon": "lucide-file",
               "title": "ai-memory"
+            }
+          },
+          {
+            "id": "999ea2f14795205c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.15.0"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.15.0"
             }
           }
         ],
@@ -93,7 +105,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "aed8295a0ec83ff1",
@@ -219,8 +232,9 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b43c86170d2100ef",
+  "active": "07bef6360573b35c",
   "lastOpenFiles": [
+    "file:/home/juni/.config/caelestia/ai-memory.md",
     "02_Wiki/Health-Fitness/2023-runderful-21k-pakuwon-city.md",
     "02_Wiki/Engineering/refactoring-sebagai-meditasi-infj.md",
     "02_Wiki/Engineering/clean-architecture-dan-feature-sliced-design.md",
@@ -247,7 +261,6 @@
     "00_Inbox/03-migration-and-validation.md",
     "00_Inbox/02-technical-design.md",
     "00_Inbox/01-architecture-decisions.md",
-    "00_Inbox/Readme.md",
     "99_System/Assets",
     "02_Wiki/Knowledge",
     "00_Inbox",
